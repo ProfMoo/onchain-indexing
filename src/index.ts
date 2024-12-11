@@ -1,8 +1,14 @@
 import { ponder } from "ponder:registry";
 import { depositorList } from "../ponder.schema";
+import { replaceBigInts } from "@ponder/utils";
+import { toHex } from "viem";
 
 ponder.on("OperatorContract:SpawnedPool", async ({ event, context }) => {
   console.log(`Found something!!!`);
+
+  // JSON can't stringify bigints, so convert using a utility func here
+  let eventNoBigInts = replaceBigInts(event, toHex);
+  console.log("Event object:", JSON.stringify(eventNoBigInts, null, 2));
 
   const {
     factory,
