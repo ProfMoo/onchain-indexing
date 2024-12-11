@@ -2,6 +2,8 @@ import { ponder } from "@/generated";
 import { depositorList } from "../ponder.schema";
 
 ponder.on("OperatorContract:SpawnedPool", async ({ event, context }) => {
+  console.log(`Found something!!!`);
+
   const {
     factory,
     pool,
