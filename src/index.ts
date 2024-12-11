@@ -1,4 +1,4 @@
-import { ponder } from "@/generated";
+import { ponder } from "ponder:registry";
 import { depositorList } from "../ponder.schema";
 
 ponder.on("OperatorContract:SpawnedPool", async ({ event, context }) => {
