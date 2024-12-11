@@ -1,6 +1,6 @@
 import { onchainTable } from "ponder";
 
-export const depositorList = onchainTable("depositors", (t) => ({
+export const depositors = onchainTable("depositors", (t) => ({
   pool: t.hex().primaryKey(),
   factory: t.hex(),
   withdrawalRecipient: t.hex(),

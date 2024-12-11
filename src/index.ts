@@ -1,5 +1,5 @@
 import { ponder } from "ponder:registry";
-import { depositorList } from "ponder:schema";
+import { depositors } from "ponder:schema";
 import { replaceBigInts } from "@ponder/utils";
 import { toHex } from "viem";
 
@@ -20,7 +20,7 @@ ponder.on("OperatorContract:SpawnedPool", async ({ event, context }) => {
     exitQueue,
   } = event.args;
 
-  await context.db.insert(depositorList).values({
+  await context.db.insert(depositors).values({
     pool: pool,
     factory: factory,
     withdrawalRecipient: withdrawalRecipient,
@@ -51,7 +51,7 @@ ponder.on("OperatorContract2:SpawnedPool", async ({ event, context }) => {
     exitQueue,
   } = event.args;
 
-  await context.db.insert(depositorList).values({
+  await context.db.insert(depositors).values({
     pool: pool,
     factory: factory,
     withdrawalRecipient: withdrawalRecipient,
