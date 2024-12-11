@@ -8,4 +8,5 @@ export const depositorList = onchainTable("depositors", (t) => ({
   coverageRecipient: t.hex(),
   oracleAggregator: t.hex(),
   exitQueue: t.hex(),
+  test: t.numeric(),
 }));

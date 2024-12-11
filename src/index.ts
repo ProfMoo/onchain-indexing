@@ -28,6 +28,7 @@ ponder.on("OperatorContract:SpawnedPool", async ({ event, context }) => {
     coverageRecipient: coverageRecipient,
     oracleAggregator: oracleAggregator,
     exitQueue: exitQueue,
+    test: "123",
   });
 
   console.log(`Pool ${pool} spawned`);
@@ -58,6 +59,7 @@ ponder.on("OperatorContract2:SpawnedPool", async ({ event, context }) => {
     coverageRecipient: coverageRecipient,
     oracleAggregator: oracleAggregator,
     exitQueue: exitQueue,
+    test: "123",
   });
 
   console.log(`Pool ${pool} spawned`);
