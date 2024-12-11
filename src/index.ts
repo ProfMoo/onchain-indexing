@@ -3,6 +3,9 @@ import { depositorList } from "../ponder.schema";
 import { replaceBigInts } from "@ponder/utils";
 import { toHex } from "viem";
 
+// Function to convert hex to bigint
+const hexToBigInt = (hex: string) => BigInt(hex);
+
 ponder.on("OperatorContract:SpawnedPool", async ({ event, context }) => {
   console.log(`Found something!!!`);
 
@@ -28,6 +31,7 @@ ponder.on("OperatorContract:SpawnedPool", async ({ event, context }) => {
     coverageRecipient: coverageRecipient,
     oracleAggregator: oracleAggregator,
     exitQueue: exitQueue,
+    blockNumber2: hexToBigInt(eventNoBigInts?.block?.number),
   });
 
   console.log(`Pool ${pool} spawned`);
