@@ -1,6 +1,11 @@
 import { onchainTable } from "@ponder/core";
 
-export const example = onchainTable("example", (t) => ({
-  id: t.text().primaryKey(),
-  name: t.text(),
+export const depositorList = onchainTable("depositors", (t) => ({
+  pool: t.hex().primaryKey(),
+  factory: t.hex(),
+  withdrawalRecipient: t.hex(),
+  execLayerRecipient: t.hex(),
+  coverageRecipient: t.hex(),
+  oracleAggregator: t.hex(),
+  exitQueue: t.hex(),
 }));

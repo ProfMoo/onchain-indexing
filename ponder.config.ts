@@ -1,7 +1,7 @@
 import { createConfig } from "@ponder/core";
 import { http } from "viem";
 
-import { ExampleContractAbi } from "./abis/ExampleContractAbi";
+import { CoinbaseCloudOperatorABI } from "./abis/CoinbaseCloudOperatorABI";
 
 export default createConfig({
   networks: {
@@ -11,11 +11,16 @@ export default createConfig({
     },
   },
   contracts: {
-    ExampleContract: {
+    OperatorContract: {
       network: "mainnet",
-      abi: ExampleContractAbi,
-      address: "0x0000000000000000000000000000000000000000",
-      startBlock: 1234567,
+      abi: CoinbaseCloudOperatorABI,
+      // Actual contract code (i.e. not the proxy, the implementation contract)
+      // https://etherscan.io/address/0x0a08355d39a964010f1c23dd9791ec99a0131048
+      address: "0x0a08355d39a964010f1c23dd9791ec99a0131048",
+      // This is the block the operator contract was deployed at.
+      // We don't need to index information before this block, so we start here.
+      // https://etherscan.io/tx/0xea9146c07bde2ead0fc9ab4066ced495088417a4d5487e6d84704853d753fe27
+      startBlock: 17785574,
     },
   },
 });
