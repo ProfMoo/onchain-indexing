@@ -34,6 +34,7 @@ Plus, ponder has some really great open source examples to pull from, such as [t
   * Can be painful if you're trying to run this in a real, high-scale production environment. You'd be locked into the DBs that Ponder supports.
 * Documentation is OK. 5/10.
 * Not very scalable. Can probably scale to midsize usage (i.e. ~3 digit QPS), but above that might struggle.
+  * I'd be interested to see QPS of ponder indexes in production.
 * [Quickstart](https://ponder.sh/docs/getting-started/new-project) is really nice. Super quick and integrates well with
 
 ### [CDP ABI Upload](https://docs.cdp.coinbase.com/onchain-data/docs/smart-contract-events/overview)
@@ -47,10 +48,26 @@ Overall, I don't think the CDP ABI Upload product offers enough to be part of an
 
 ### Overall
 
-CDP ABI Upload feels very "now what?" as an indexing solution - it lacks the necessary features to get across the finish line. It is excellent at the first part, but lacks the second half needed to really be used in production by small OR large teams. Some potential suggestions.
+I'll preface this part with: this is just my personal opinion. Others may find CDP ABI Upload to be useful on its own.
+
+CDP ABI Upload feels very "now what?" as an indexing solution - it lacks the necessary features to get across the finish line. It is solid at the first part of indexing (i.e. upload ABI, get back typed tx events/logs), but lacks the second part (i.e. transform and make accessible to an application) needed to really be used in production by small OR large teams. For a team to use this application, they'd need to do any transform on the hot path of a user request.
+
+### Recommendations
 
 * Once a user uploads an ABI, offer a way for a user to load this data into a real data processing system. Could be a high-memory DB such as SingleStore, ClickHouse, etc. or a warehouse like Snowflake.
-* Instead of the above, CDP ABI Upload could attempt to integrate more cleanly with TheGraph or Ponder, passing off the "transform and store" to those open source alternatives.
+  * User could perform additional transforms from there.
+* CDP ABI Upload could attempt to integrate more cleanly with TheGraph or Ponder, passing off the "transform and store" to those open source alternatives.
   * Would need some intelligent way to "drop in" CDP ABI Upload as a "source" to these open source indexing solutions. Probably would involve significant contribution to these open source projects.
 
-Definitely an opportunity here for CDP to help with some of the "hard" parts of indexing. Ponder still requires a full archival node to work, which CDP can assist with.
+Definitely an opportunity here for CDP to help with some of the "hard" parts of indexing. Ponder still requires a full archival node to work, which CDP ABI Upload obviates.
+
+### Feature Comparison
+
+| Feature | Ponder | CDP ABI Upload |
+|---------|---------|----------------|
+| Development Speed | Fast | Medium |
+| Documentation | 5/10 | 2/10 |
+| Scalability | Medium | Depends on if transform is needed |
+| Transform Support | Yes | No |
+| Intuitive Backfill | Yes | No |
+| Infrastructure Needs | Archival Node | None |
