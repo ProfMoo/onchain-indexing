@@ -25,7 +25,7 @@ export default createConfig({
     OperatorContract: {
       network: "mainnet",
       abi: CoinbaseCloudOperatorABI,
-      // Proxy contract code (this one actually works). Turns out we're supposed to use the proxy!
+      // Proxy contract code (this one actually works with ponder). Turns out we're supposed to use the proxy!
       // https://etherscan.io/address/0x8a113da63f02811e63c1e38ef615df94df5d9e70
       address: "0x8a113da63f02811e63c1e38ef615df94df5d9e70",
       // This is the block the underlying contract code was deployed at.

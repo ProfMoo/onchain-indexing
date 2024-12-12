@@ -1,6 +1,6 @@
 # Onchain Indexing
 
-Playing around with [ponder](https://github.com/ponder-sh/ponder) by trying to index some Kiln staking events on Ethereum mainnet.
+Playing around with [ponder](https://github.com/ponder-sh/ponder) to get some very simple onchain data. Namely, indexing Kiln smart contracts to get the list of vPools created by the [CoinbaseCloudOperator](https://explorer.kiln.fi/vfactories/0x2d5e65ff87d986d18ac224e725dc654bec3a04cd) on ETH mainnet. In summary, it works :smile::
 
 ![It Works!](./docs/working.png)
 
