@@ -30,31 +30,31 @@ Playing around with [ponder](https://github.com/ponder-sh/ponder) to get some ve
         distributions {
             totalCount
             items {
-            amount
-            distributor
-            id
-            token
+                amount
+                distributor
+                id
+                token
             }
         }
         ownerTransfers {
             totalCount
             items {
-            id
-            newOwner
-            oldOwner
+                id
+                newOwner
+                oldOwner
             }
         }
         depositors {
             totalCount
             items {
-            coverageRecipient
-            execLayerRecipient
-            exitQueue
-            factory
-            oracleAggregator
-            pool
-            test
-            withdrawalRecipient
+                coverageRecipient
+                execLayerRecipient
+                exitQueue
+                factory
+                oracleAggregator
+                pool
+                test
+                withdrawalRecipient
             }
         }
     }
