@@ -1,6 +1,6 @@
-import { onchainTable } from "ponder";
+import { onchainTable } from "@ponder/core";
 
-export const depositors = onchainTable("depositors", (t) => ({
+export const depositor = onchainTable("depositor", (t) => ({
   pool: t.hex().primaryKey(),
   factory: t.hex(),
   withdrawalRecipient: t.hex(),

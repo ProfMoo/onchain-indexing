@@ -24,8 +24,10 @@ Playing around with [ponder](https://github.com/ponder-sh/ponder) by trying to i
 
 * Feedback loop is excellent. I can change my table or indexing, then the local server automatically senses that and re-indexes. Extremely rapid development.
 * Loads data into another DB (i.e. opinionated on where the indexed data ends up)
-  * Is nice because the "database is a detail", but can be painful if you're trying to run this in a real, high-scale production environment.
-* Documentation is OK. 5/10
+  * Is nice because the "database is a detail"
+  * Can be painful if you're trying to run this in a real, high-scale production environment. You'd be locked into the DBs that Ponder supports.
+* Documentation is OK. 5/10.
+* Not very scalable. Can probably scale to midsize usage (i.e. ~3 digit QPS), but above that might struggle.
 * [Quickstart](https://ponder.sh/docs/getting-started/new-project) is really nice. Super quick and integrates well with
 
 ### [CDP ABI Upload](https://docs.cdp.coinbase.com/onchain-data/docs/smart-contract-events/overview)
