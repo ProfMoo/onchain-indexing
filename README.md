@@ -20,6 +20,10 @@ Playing around with [ponder](https://github.com/ponder-sh/ponder) by trying to i
 
 ## Comparison/Feedback
 
+Below I compare [ponder](https://github.com/ponder-sh/ponder) to [CDP ABI Upload](https://docs.cdp.coinbase.com/onchain-data/docs/smart-contract-events/overview). Ponder was selected as it's a faster/newer alternative to TheGraph. TheGraph is the most popular indexing solution in the space, so I wanted to use something that was similar in the types of data sources (i.e. tx logs, events), data storage solutions (opinionated DB selection), and overall development speed. Ponder seemed to be lighter weight and required running way fewer processes/containers, so I wanted to give it a shot :).
+
+Plus, ponder has some really great open source examples to pull from, such as [this one from Uniswap](https://github.com/Uniswap/the-compact-indexer).
+
 ### [Ponder](https://github.com/ponder-sh/ponder)
 
 * Feedback loop is excellent. I can change my table or indexing, then the local server automatically senses that and re-indexes. Extremely rapid development.
@@ -45,4 +49,4 @@ CDP ABI Upload feels very "now what?" as an indexing solution - it lacks the nec
 
 * Once a user uploads an ABI, offer a way for a user to load this data into a real data processing system. Could be a high-memory DB such as SingleStore, ClickHouse, etc. or a warehouse like Snowflake.
 * Instead of the above, CDP ABI Upload could attempt to integrate more cleanly with TheGraph or Ponder, passing off the "transform and store" to those open source alternatives.
-  * Would need some intelligent way to "drop in" CDP ABI Upload as a "source" to these open source indexing solutions.
+  * Would need some intelligent way to "drop in" CDP ABI Upload as a "source" to these open source indexing solutions. Probably would involve significant contribution to these open source projects.
