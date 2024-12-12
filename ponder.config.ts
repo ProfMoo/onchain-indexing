@@ -2,6 +2,7 @@ import { createConfig } from "@ponder/core";
 import { http } from "viem";
 
 import { CoinbaseCloudOperatorABI } from "./abis/CoinbaseCloudOperatorABI";
+import { PaymentSplitterABI } from "./abis/PaymentSplitterABI";
 
 export default createConfig({
   networks: {
@@ -32,6 +33,30 @@ export default createConfig({
       // We don't need to index information before this block, so we start here.
       // https://etherscan.io/tx/0xea9146c07bde2ead0fc9ab4066ced495088417a4d5487e6d84704853d753fe27
       startBlock: 17785565,
+    },
+    PaymentSplitterContract: {
+      network: "mainnet",
+      abi: PaymentSplitterABI,
+      address: "0xea04152C542AFD6B99fDff840CC54014f31c9251",
+      startBlock: 17785565,
+    },
+    PaymentSplitterContract2: {
+      network: "mainnet",
+      abi: PaymentSplitterABI,
+      address: "0x6291497d1206618fc810900d2e7e9af6aa1f1b99",
+      startBlock: 17785565,
+    },
+    UsedPaymentSplitterContract: {
+      network: "mainnet",
+      abi: PaymentSplitterABI,
+      address: "0xd46f0BBa780301730Cef4fBD1493C9B58cBAF01D",
+      startBlock: 19785565,
+    },
+    UsedPaymentSplitterContract2: {
+      network: "mainnet",
+      abi: PaymentSplitterABI,
+      address: "0x6291497d1206618fc810900d2e7e9af6aa1f1b99",
+      startBlock: 19785565,
     },
   },
 });

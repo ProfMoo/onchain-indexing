@@ -19,3 +19,43 @@ Playing around with [ponder](https://github.com/ponder-sh/ponder) to get some ve
     ```bash
     npm run dev
     ```
+
+3. Go to the Ponder Playground @ <http://localhost:42069>, run a query to see the data:
+
+    ```gql
+    query Test {
+        _meta {
+            status
+        }
+        distributions {
+            totalCount
+            items {
+            amount
+            distributor
+            id
+            token
+            }
+        }
+        ownerTransfers {
+            totalCount
+            items {
+            id
+            newOwner
+            oldOwner
+            }
+        }
+        depositors {
+            totalCount
+            items {
+            coverageRecipient
+            execLayerRecipient
+            exitQueue
+            factory
+            oracleAggregator
+            pool
+            test
+            withdrawalRecipient
+            }
+        }
+    }
+    ```
