@@ -39,10 +39,7 @@ Plus, ponder has some really great open source examples to pull from, such as [t
 
 ### [CDP ABI Upload](https://docs.cdp.coinbase.com/onchain-data/docs/smart-contract-events/overview)
 
-Overall, I don't think the CDP ABI Upload product offers enough to be part of an onchain app's indexing solution. So it begs the question: what is it for? What's the real use-case here?
-
-* Once a user uploads the ABI, they get an endpoint that exposes events & calls. Then, what is the user to do at that point? What if they want to perform additional transforms on top of that data (i.e. just like is very common in TheGraph, Ponder, and others).
-  * Essentially, to do this, the user must implement another data ingestion pipeline system on top of a bespoke CDP API themselves. This includes backfilling, incremental batching, etc, etc. To me, seems highly unlikely any builders will do this. They'd simply opt to use TheGraph, Ponder, etc.
+* Simple interface, easy to understand how to integrate.
 * Provided a very low-level event/contract call endpoint.
 * Documentation is very scant. 2/10. As a result: feels like an opaque solution on top of an open system (i.e. the blockchain)
 
@@ -51,6 +48,8 @@ Overall, I don't think the CDP ABI Upload product offers enough to be part of an
 I'll preface this part with: this is just my personal opinion. Others may find CDP ABI Upload to be useful on its own.
 
 CDP ABI Upload feels very "now what?" as an indexing solution - it lacks the necessary features to get across the finish line. It is solid at the first part of indexing (i.e. upload ABI, get back typed tx events/logs), but lacks the second part (i.e. transform and make accessible to an application) needed to really be used in production by small OR large teams. For a team to use this application, they'd need to do any transform on the hot path of a user request.
+
+Or a user must implement another data ingestion pipeline system on top of a bespoke CDP API themselves. This includes backfilling, incremental batching, etc, etc. To me, seems highly unlikely any builders will do this. They'd simply opt to use TheGraph, Ponder, etc. Overall, I don't think the CDP ABI Upload product offers enough to be part of an onchain app's indexing solution. So it begs the question: what is it for? What's the real use-case here?
 
 ### Recommendations
 
