@@ -39,7 +39,8 @@ Overall, I don't think the CDP ABI Upload product offers enough to be part of an
 
 ### Overall
 
-CDP ABI Upload feels very "now what?" as an indexing solution. It is excellent at the first part, but lacks the second half needed to really be used in production by small OR large teams. Some potential suggestions:
-    - Once a user uploads an ABI, offer a way for a user to load this data into a real data processing system. Could be a high-memory DB such as SingleStore, ClickHouse, etc. or a warehouse like Snowflake.
-    - Instead of the above, CDP ABI Upload could attempt to integrate more cleanly with TheGraph or Ponder, passing off the "transform and store" to those open source alternatives.
-      - Would need some intelligent way to "drop in" CDP ABI Upload as a "source" to these open source indexing solutions.
+CDP ABI Upload feels very "now what?" as an indexing solution. It is excellent at the first part, but lacks the second half needed to really be used in production by small OR large teams. Some potential suggestions.
+
+* Once a user uploads an ABI, offer a way for a user to load this data into a real data processing system. Could be a high-memory DB such as SingleStore, ClickHouse, etc. or a warehouse like Snowflake.
+* Instead of the above, CDP ABI Upload could attempt to integrate more cleanly with TheGraph or Ponder, passing off the "transform and store" to those open source alternatives.
+  * Would need some intelligent way to "drop in" CDP ABI Upload as a "source" to these open source indexing solutions.
