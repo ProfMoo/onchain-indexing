@@ -2,13 +2,15 @@
 
 Playing around with [ponder](https://github.com/ponder-sh/ponder) by trying to index some Kiln staking events on Ethereum mainnet.
 
+![It Works!](./docs/working.png)
+
 ## QuickStart
 
 1. Put ETH archival node in `.env.local`:
 
     ```ini
     PONDER_RPC_URL_1="<url>"
-    # (Optional) Postgres database URL. If not provided, SQLite will be used
+    # (Optional) Postgres database URL. If not provided, local pglite will be used
     DATABASE_URL=
     ```
 
@@ -50,3 +52,5 @@ CDP ABI Upload feels very "now what?" as an indexing solution - it lacks the nec
 * Once a user uploads an ABI, offer a way for a user to load this data into a real data processing system. Could be a high-memory DB such as SingleStore, ClickHouse, etc. or a warehouse like Snowflake.
 * Instead of the above, CDP ABI Upload could attempt to integrate more cleanly with TheGraph or Ponder, passing off the "transform and store" to those open source alternatives.
   * Would need some intelligent way to "drop in" CDP ABI Upload as a "source" to these open source indexing solutions. Probably would involve significant contribution to these open source projects.
+
+Definitely an opportunity here for CDP to help with some of the "hard" parts of indexing. Ponder still requires a full archival node to work, which CDP can assist with.
